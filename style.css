@@ -6,3 +6,64 @@ h1,
 h2 {
   font-family: "Distillery Display W00 Regular";
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  width: 100dvw;
+  background-image: url(media/sampleBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.searchContainer {
+  margin-top: 5dvh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2dvh;
+}
+
+.searchBarContainer {
+  width: 75%;
+  background-color: #f8f9fc;
+  border-radius: 50px;
+  opacity: 60%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.searchBar {
+  height: 7dvh;
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.fa-magnifying-glass {
+  margin: 5%;
+}
+
+.fa-solid,
+p {
+  opacity: 80%;
+}
+
+.searchSubmitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #86a3bf;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  height: 7dvh;
+  opacity: 80%;
+  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
