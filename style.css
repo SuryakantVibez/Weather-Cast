@@ -1,5 +1,7 @@
 * {
   font-family: "Kudryashev Display Sans";
+  color: #f8f9fc;
+  box-sizing: border-box;
 }
 
 h1,
@@ -9,7 +11,7 @@ h2 {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 4dvh;
   height: 100dvh;
   width: 100dvw;
   background-image: url(media/sampleBG.png);
@@ -19,18 +21,18 @@ body {
 }
 
 .searchContainer {
-  margin-top: 5dvh;
+  margin-top: 2.5dvh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  padding: 2dvh;
 }
 
 .searchBarContainer {
-  width: 75%;
+  width: 100%;
+  margin-right: 5dvw;
   background-color: #f8f9fc;
   border-radius: 50px;
-  opacity: 60%;
+  opacity: 40%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
@@ -47,12 +49,18 @@ p {
 }
 
 .fa-magnifying-glass {
-  margin: 5%;
+  margin: 15px;
 }
 
-.fa-solid,
 p {
   opacity: 80%;
+  color: black;
+}
+
+.fa-location-dot,
+.fa-magnifying-glass {
+  opacity: 80%;
+  color: black;
 }
 
 .searchSubmitBtn {
@@ -63,7 +71,28 @@ p {
   aspect-ratio: 1/1;
   border-radius: 50%;
   height: 7dvh;
+
   opacity: 80%;
   font-size: 1.2rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.temp {
+  height: 30dvh;
+  overflow: hidden;
+}
+
+.tempText {
+  font-weight: 500;
+  font-size: 20dvh;
+  margin: 0;
+}
+
+.cityLocationDot {
+  color: #f8f9fc;
+}
+
+.condition,
+.location {
+  font-size: 1.2rem;
 }
