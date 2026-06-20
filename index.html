@@ -20,65 +20,92 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
   </head>
   <body>
-    <div class="searchContainer">
-      <div class="searchBarContainer">
-        <div class="searchBar">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <p>Search location</p>
+    <div class="top">
+      <div class="searchContainer">
+        <div class="searchBarContainer">
+          <div class="searchBar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p>Search location</p>
+          </div>
+        </div>
+        <button class="searchSubmitBtn">
+          <i class="fa-solid fa-location-dot"></i>
+        </button>
+      </div>
+
+      <div class="main">
+        <div class="temp">
+          <h2 class="tempText">31°C</h2>
+        </div>
+        <div class="condition">Sunny</div>
+        <div class="location">
+          <i class="fa-solid fa-location-dot cityLocationDot"></i> Noida
         </div>
       </div>
-      <div class="searchSubmitBtn">
-        <i class="fa-solid fa-location-dot"></i>
-      </div>
     </div>
-
-    <div class="main">
-      <div class="temp">
-        <h2 class="tempText">31°C</h2>
-      </div>
-      <div class="condition">Sunny</div>
-      <div class="location">
-        <i class="fa-solid fa-location-dot cityLocationDot"></i> Noida
-      </div>
-    </div>
-
-    <div class="widgetArea">
-      <div class="topWidgets">
-        <div class="right">
-          <div class="wind">
-            <div class="arrow"></div>
-            <div class="windText">
-              <div><h2>Wind Direction</h2></div>
-              <div class="line"></div>
-              <div class="windInfo">
-                <div class="windDirection">NW</div>
-                <div class="windDegree">42°</div>
-              </div>
-            </div>
-          </div>
+    <div class="bottom">
+      <div class="widgetArea">
+        <div class="topWidgets">
           <div class="left">
-            <div class="leftTop">
-              <div class="time"><h2>9:41 AM</h2></div>
-            </div>
-            <div class="leftBottom">
-              <div class="aqiContainer">
-                <div class="aqi"><h1>68</h1></div>
-                <div><h2>AQI</h2></div>
+            <div class="wind widget">
+              <div class="arrow"><i class="fa-solid fa-arrow-up-long"></i></div>
+              <div class="windText">
+                <h2>Wind <br />Direction</h2>
                 <div class="line"></div>
-                <div class="aqiState">Moderate</div>
+                <div class="windInfo">
+                  NW<br />
+                  42
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="rightTop">
+              <div class="time widget">
+                <h2>9:41 AM</h2>
+              </div>
+            </div>
+            <div class="rightBottom">
+              <div class="aqiContainer widget">
+                <h1 class="aqi">68</h1>
+                <div class="aqiText">
+                  <div><h2>AQI</h2></div>
+                  <div class="line" style="height: 100%"></div>
+                  <div class="aqiState">Moderate</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="sunStateCard">
-        <div class="sunrise"></div>
-        <div class="line"></div>
-        <div class="sunset"></div>
+        <div class="sunStateCard widget">
+          <div class="sunrise">
+            <div class="sunCardUp">
+              <div class="sunriseIcon circle"></div>
+              <div class="sunTime"><h2>5:27 AM</h2></div>
+            </div>
+            <div class="sunCardDown">Sunrise</div>
+          </div>
+          <div class="line"></div>
+          <div class="sunset">
+            <div class="sunCardUp">
+              <div class="sunsetIcon circle"></div>
+              <div class="sunTime"><h2>7:12 PM</h2></div>
+            </div>
+            <div class="sunCardDown">Sunset</div>
+          </div>
+        </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+      console.log(document.querySelector(".searchSubmitBtn"));
+      document
+        .querySelector(".searchSubmitBtn")
+        .addEventListener("click", () => {
+          document.documentElement.requestFullscreen();
+        });
+    </script>
   </body>
 </html>
