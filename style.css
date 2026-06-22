@@ -118,7 +118,7 @@ p {
   position: relative;
   bottom: 1.5rem;
   height: 60%;
-  overflow: scroll;
+  overflow: hidden;
   scale: 90%;
 }
 
@@ -281,4 +281,21 @@ h2 {
 
 button {
   border-style: none;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+  max-width: 40dvw;
+
+  font-family: "Kudryashev Display Sans";
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: black;
+}
+
+input::placeholder {
+  color: black;
+  opacity: 0.8;
 }

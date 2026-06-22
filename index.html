@@ -20,7 +20,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <link rel="icon" type="image/x-icon" href="media/favicon.png" />
   </head>
   <body>
     <div class="top">
@@ -28,10 +28,14 @@
         <div class="searchBarContainer">
           <div class="searchBar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <p>Search location</p>
+            <input
+              id="locationInput"
+              type="text"
+              placeholder="Search location"
+            />
           </div>
         </div>
-        <button class="searchSubmitBtn">
+        <button class="searchSubmitBtn" type="submit">
           <i class="fa-solid fa-location-dot"></i>
         </button>
       </div>
@@ -99,13 +103,6 @@
         </div>
       </div>
     </div>
-    <script>
-      console.log(document.querySelector(".searchSubmitBtn"));
-      document
-        .querySelector(".searchSubmitBtn")
-        .addEventListener("click", () => {
-          document.documentElement.requestFullscreen();
-        });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
