@@ -46,7 +46,8 @@
         </div>
         <div class="condition">Sunny</div>
         <div class="location">
-          <i class="fa-solid fa-location-dot cityLocationDot"></i> Noida
+          <i class="fa-solid fa-location-dot cityLocationDot"></i>
+          <div class="cityLocation">Noida</div>
         </div>
       </div>
     </div>
@@ -60,8 +61,8 @@
                 <h2>Wind <br />Direction</h2>
                 <div class="line"></div>
                 <div class="windInfo">
-                  NW<br />
-                  42
+                  <div class="windDirection">NW <br /></div>
+                  <div class="windDegree">42</div>
                 </div>
               </div>
             </div>
@@ -69,16 +70,19 @@
           <div class="right">
             <div class="rightTop">
               <div class="time widget">
-                <h2>9:41 AM</h2>
+                <h2 id="localTime">9:41 AM</h2>
               </div>
             </div>
             <div class="rightBottom">
-              <div class="aqiContainer widget">
-                <h1 class="aqi">68</h1>
-                <div class="aqiText">
-                  <div><h2>AQI</h2></div>
-                  <div class="line" style="height: 100%"></div>
-                  <div class="aqiState">Moderate</div>
+              <div class="humidityContainer widget">
+                <h1 class="humidity">68%</h1>
+                <div
+                  class="line"
+                  style="width: 75%; height: 1dvw; margin: 0 auto 0 auto"
+                ></div>
+                <div class="humidityText">
+                  <h2>Humidity</h2>
+                  <div class="humidityState">Moderate</div>
                 </div>
               </div>
             </div>
@@ -88,7 +92,7 @@
           <div class="sunrise">
             <div class="sunCardUp">
               <div class="sunriseIcon circle"></div>
-              <div class="sunTime"><h2>5:27 AM</h2></div>
+              <div class="sunTime"><h2 id="rise">5:27 AM</h2></div>
             </div>
             <div class="sunCardDown">Sunrise</div>
           </div>
@@ -96,7 +100,7 @@
           <div class="sunset">
             <div class="sunCardUp">
               <div class="sunsetIcon circle"></div>
-              <div class="sunTime"><h2>7:12 PM</h2></div>
+              <div class="sunTime"><h2 id="set">7:12 PM</h2></div>
             </div>
             <div class="sunCardDown">Sunset</div>
           </div>
