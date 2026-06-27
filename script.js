@@ -1,3 +1,25 @@
+// Automatic weather fetching
+
+function getLocation() {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+}
+
+async function start() {
+  try {
+    const position = await getLocation();
+
+    const locationName = `${position.coords.latitude},${position.coords.longitude}`;
+
+    getWeather(locationName);
+  } catch (err) {
+    console.log("Location permission denied.");
+    getWeather("Noida"); // Fallback
+  }
+}
+
+start();
 
 // Searching location
 
