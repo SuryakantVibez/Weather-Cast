@@ -1,15 +1,10 @@
-//Temp Fullscreen function
-
-// document.querySelector(".searchSubmitBtn").addEventListener("click", () => {
-//   document.documentElement.requestFullscreen();
-// });
 
 // Searching location
 
 const searchBar = document.querySelector("#locationInput");
 
 document.querySelector(".searchSubmitBtn").onclick = () => {
-  const locationName = searchBar.value;
+  locationName = searchBar.value;
   searchBar.value = null;
   console.log(locationName);
   getWeather(locationName);
@@ -41,9 +36,13 @@ async function getWeather(locationName) {
   document.querySelector(".cityLocation").textContent =
     data.location.name + ", " + data.location.region;
   document.querySelector(".windDirection").textContent = data.current.wind_dir;
-  document.querySelector(".windDegree").textContent = data.current.wind_degree;
+  document.querySelector(".windDegree").textContent =
+    data.current.wind_degree + "°";
+  console.log(data.current.wind_degree);
+  document.querySelector("img").style.rotate =
+    data.current.wind_degree + 180 + "deg";
 
-  //Time wizardary
+  //Time wizardary, please forgive me, i didn't know how, i had to copy from chatgpt :prayEmojiSupposedToBeHere(notReally)
 
   document.querySelector("#localTime").textContent = new Date(
     data.location.localtime.replace(" ", "T"),
@@ -64,4 +63,19 @@ async function getWeather(locationName) {
     locationHumidity = "High";
   }
   document.querySelector(".humidityState").textContent = locationHumidity;
+
+  const astroResponse = await fetch(
+    "https://api.weatherapi.com/v1/astronomy.json?key=" +
+      api +
+      "&q=" +
+      locationName +
+      "&aqi=no",
+  );
+
+  const astroData = await astroResponse.json();
+  console.log(astroData);
+
+  document.querySelector("#rise").textContent =
+    astroData.astronomy.astro.sunrise;
+  document.querySelector("#set").textContent = astroData.astronomy.astro.sunset;
 }
