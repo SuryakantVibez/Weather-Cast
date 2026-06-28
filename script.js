@@ -28,7 +28,6 @@ const searchBar = document.querySelector("#locationInput");
 document.querySelector(".searchSubmitBtn").onclick = () => {
   locationName = searchBar.value;
   searchBar.value = null;
-  console.log(locationName);
   getWeather(locationName);
 };
 
@@ -60,7 +59,6 @@ async function getWeather(locationName) {
   document.querySelector(".windDirection").textContent = data.current.wind_dir;
   document.querySelector(".windDegree").textContent =
     data.current.wind_degree + "°";
-  console.log(data.current.wind_degree);
   document.querySelector("img").style.rotate =
     data.current.wind_degree + 180 + "deg";
 
@@ -100,4 +98,47 @@ async function getWeather(locationName) {
   document.querySelector("#rise").textContent =
     astroData.astronomy.astro.sunrise;
   document.querySelector("#set").textContent = astroData.astronomy.astro.sunset;
+
+  //Dynamic backgrounds
+  const code = data.current.condition.code;
+  const isDay = data.current.is_day;
+
+  let background;
+
+  // Sunny
+  if (code === 1000) {
+    background = "clear";
+  }
+
+  // Cloudy
+  else if (
+    [
+      1003, 1006, 1009, 1012, 1015, 1018, 1021, 1024, 1027, 1030, 1033, 1036,
+      1039, 1042, 1045, 1048, 1135, 1147,
+    ].includes(code)
+  ) {
+    background = "cloudy";
+  }
+
+  // Rain (includes rain, snow, sleet, thunder, etc.)
+  else {
+    background = "rainy";
+  }
+
+  // Night version
+  if (!isDay) {
+    background += "Night";
+  } else {
+    background += "Day";
+  }
+  document.body.style.opacity = "0";
+  document.body.style.filter = "blur(8px)";
+  document.body.style.transform = "scale(0.99)";
+  setTimeout(() => {
+    document.body.style.backgroundImage = `url(media/backgrounds/${background}.png)`;
+
+    document.body.style.opacity = "1";
+    document.body.style.filter = "blur(0px)";
+    document.body.style.transform = "scale(1)";
+  }, 300);
 }

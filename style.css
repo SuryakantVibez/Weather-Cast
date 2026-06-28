@@ -17,11 +17,13 @@ body {
   margin: 0;
   padding: 4dvh;
   min-height: 100%;
-  background-image: url(media/sampleBG.png);
+  background-image: url(media/backgrounds/clearDay.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
+  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
   /* grid-template-rows: 4fr 6fr; */
 }
 
