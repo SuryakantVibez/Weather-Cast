@@ -13,7 +13,6 @@ h2 {
 }
 
 body {
-  /* display: grid; */
   margin: 0;
   padding: 4dvh;
   min-height: 100%;
@@ -24,7 +23,44 @@ body {
   box-sizing: border-box;
   transition: opacity 0.3s ease;
   transition: 0.3s ease;
-  /* grid-template-rows: 4fr 6fr; */
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100dvh;
+  }
+
+  .top,
+  .bottom {
+    height: 100%;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .widgetArea {
+    max-height: 80dvh;
+  }
+}
+
+@media (max-width: 769px) {
+  .top {
+    height: 40%;
+    overflow: hidden;
+  }
+  .bottom {
+    height: 60%;
+    overflow: hidden;
+    scale: 90%;
+    position: relative;
+    bottom: 1.5rem;
+  }
 }
 
 .searchContainer {
@@ -114,19 +150,6 @@ p {
   border-radius: 30px;
   height: 100%;
   width: 100%;
-}
-
-.top {
-  height: 40%;
-  overflow: hidden;
-}
-
-.bottom {
-  position: relative;
-  bottom: 1.5rem;
-  height: 60%;
-  overflow: hidden;
-  scale: 90%;
 }
 
 h2 {
