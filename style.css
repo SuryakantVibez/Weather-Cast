@@ -33,6 +33,10 @@ body {
     height: 100dvh;
   }
 
+  .top {
+    scale: 0.95;
+  }
+
   .top,
   .bottom {
     height: 100%;
@@ -47,9 +51,29 @@ body {
   .widgetArea {
     max-height: 80dvh;
   }
+
+  .condition,
+  .location,
+  p,
+  input,
+  .sunCardDown {
+    font-size: 1.6rem;
+  }
+
+  .humidityState {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .sunTime {
+    font-size: 1.8rem;
+  }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 767px) {
   .top {
     height: 40%;
     overflow: hidden;
@@ -60,6 +84,10 @@ body {
     scale: 90%;
     position: relative;
     bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
   }
 }
 
